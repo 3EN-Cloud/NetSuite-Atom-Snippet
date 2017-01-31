@@ -29,10 +29,10 @@
     'prefix':'search'
     'body':"""
       var filters = [];
-      filters.push(new nlobjSearchFilter('$1',null,'$2'));
+      filters.push(new nlobjSearchFilter('$1',$2,'$3',$4));
 
       var columns = [];
-      columns.push(new nlobjSearchColumn('$3'));
+      columns.push(new nlobjSearchColumn('$5'));
 
-      var searchResults = nlapiSearchRecord('$4', null, filters, columns);
+      var searchResults = nlapiSearchRecord('$6', $7, filters, columns);
     """
