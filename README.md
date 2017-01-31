@@ -17,4 +17,4 @@ Current supported prefixes:
  - `for(var line = 1; line <= lineItemCount; line++)` will insert a for loop suited to iterating sublists.
  - `search` will insert some nlapiSearchRecord boilerplate code.
 
-![demo](https://github.com/3EN-Cloud/NetSuite-Atom-Snippet/raw/master/media/sample.gif)
+![demo](https://raw.githubusercontent.com/3EN-Cloud/NetSuite-Atom-Snippet/master/media/sample.gif)
