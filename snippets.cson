@@ -28,11 +28,32 @@
   'NetSuite Search':
     'prefix':'search'
     'body':"""
-      var filters = [];
-      filters.push(new nlobjSearchFilter('$1',$2,'$3',$4));
+             const activeContactSearch = search.create({
+               type: $1,
+                filters: [{
+                  name: 'firstname',
+                  operator: 'isnotempty'
+                }
+               });
+           """
 
-      var columns = [];
-      columns.push(new nlobjSearchColumn('$5'));
+  'NetSuite Define':
+    'prefix':'define'
+    'description': 'The define Function is a global object that implements a define() Module Loader interface for SuiteScript 2.0. It conforms to the Asynchronous Module Definition (AMD) specification.'
+    'rightLabelHTML': '<span style="color:#EF490F">3EN - Netsuite</span>'
+    'descriptionMoreURL': 'https://system.netsuite.com/app/help/helpcenter.nl?fid=section_4387811519.html'
+    'body':"""
+             /**
+              * @NApiVersion 2.x
+              * @NModuleScope Public
+              * 3EN Cloud Ltd.
+              * @module $1
+              * @description $2
+              */
+             define([$3], ($4) => {
 
-      var searchResults = nlapiSearchRecord('$6', $7, filters, columns);
-    """
+               return /** @alias module:$1 */ {
+                 $5
+               };
+             });
+           """
