@@ -28,13 +28,23 @@
   'NetSuite Search':
     'prefix':'search'
     'body':"""
-             const activeContactSearch = search.create({
-               type: $1,
+             const $1 = search.create({
+               type: $2,
                 filters: [{
-                  name: 'firstname',
-                  operator: 'isnotempty'
-                }
+                  name: '$3',
+                  operator: '$4'
+                }],
+                columns: [$5]
                });
+
+              let $6;
+
+              $1.run().each(($7) => {
+                $6 = new $8($7);
+                return true;
+              });
+
+              return $6;
            """
 
   'NetSuite Define':
