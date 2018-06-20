@@ -27,9 +27,9 @@
 
   'NetSuite Search':
     'prefix':'search'
-    'description': 'The define Function is a global object that implements a define() Module Loader interface for SuiteScript 2.0. It conforms to the Asynchronous Module Definition (AMD) specification.'
+    'description': 'Load the search module to create and run on demand or saved searches and analyze and iterate through the search results. You can search for a single record by keywords, create saved searches, search for duplicate records, or return a set of records that match filters you define.'
     'rightLabelHTML': '<span style="color:#EF490F">3EN - Netsuite</span>'
-    'descriptionMoreURL': 'https://system.netsuite.com/app/help/helpcenter.nl?fid=section_4387811519.html'
+    'descriptionMoreURL': 'https://system.netsuite.com/app/help/helpcenter.nl?fid=section_4345764122.html'
     'body':"""
              const $1 = search.create({
                type: $2,
@@ -48,9 +48,9 @@
 
   'NetSuite Define':
     'prefix':'define'
-    'description': 'Load the search module to create and run on demand or saved searches and analyze and iterate through the search results. You can search for a single record by keywords, create saved searches, search for duplicate records, or return a set of records that match filters you define.'
+    'description': 'The define Function is a global object that implements a define() Module Loader interface for SuiteScript 2.0. It conforms to the Asynchronous Module Definition (AMD) specification.'
     'rightLabelHTML': '<span style="color:#EF490F">3EN - Netsuite</span>'
-    'descriptionMoreURL': 'https://system.netsuite.com/app/help/helpcenter.nl?fid=section_4345764122.html'
+    'descriptionMoreURL': 'https://system.netsuite.com/app/help/helpcenter.nl?fid=section_4387811519.html'
     'body':"""
              /**
               * @NApiVersion 2.x
