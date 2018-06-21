@@ -139,3 +139,62 @@
                };
              });
            """
+
+  'NetSuite User Event':
+    'prefix':'userEvent'
+    'description': 'User event scripts are executed on the NetSuite server. They are executed when users perform certain actions on records, such as create, load, update, copy, delete, or submit. Most standard NetSuite records and custom record types support user event scripts.'
+    'rightLabelHTML': '<span style="color:#EF490F">3EN - Netsuite</span>'
+    'descriptionMoreURL': 'https://system.netsuite.com/app/help/helpcenter.nl?fid=section_4387799721.html'
+    'body':"""
+             /**
+              * @NApiVersion 2.x
+              * @NModuleScope Public
+              * 3EN Cloud Ltd.
+              * @module $1
+              * @description $2
+              */
+             define([$3], ($4) => {
+
+               /**
+                * @function afterSubmit
+                * @description description
+                *
+                * @public
+                * @param  {type} scriptContext description
+                * @return {type} - description
+                */
+               function afterSubmit(scriptContext) {
+
+               }
+
+                /**
+                 * @function beforeLoad
+                 * @description description
+                 *
+                 * @public
+                 * @param  {type} scriptContext description
+                 * @return {type} - description
+                 */
+                function beforeLoad(scriptContext) {
+
+                }
+
+                /**
+                 * @function beforeSubmit
+                 * @description description
+                 *
+                 * @public
+                 * @param  {type} scriptContext description
+                 * @return {type} - description
+                 */
+                function beforeSubmit(scriptContext) {
+
+                }
+
+               return /** @alias module:$1 */ {
+                 afterSubmit,
+                 beforeLoad,
+                 beforeSubmit
+               };
+             });
+           """
