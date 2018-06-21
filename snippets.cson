@@ -66,3 +66,76 @@
                };
              });
            """
+
+  'NetSuite Restlet':
+    'prefix':'restlet'
+    'description': 'A RESTlet is a SuiteScript that you make available for other applications to call, either from an external application or from within NetSuite. When an application or another script calls a RESTlet, the RESTlet script executes and, in some cases, returns a value to the calling application.'
+    'rightLabelHTML': '<span style="color:#EF490F">3EN - Netsuite</span>'
+    'descriptionMoreURL': 'https://system.netsuite.com/app/help/helpcenter.nl?fid=section_4387799403.html'
+    'body':"""
+            /**
+             * @NApiVersion 2.x
+             * @NScriptType restlet
+             * @NAmdConfig ../unio-config.json
+             * 3EN Cloud Ltd.
+             * @module $1
+             * @description $2
+             */
+             define([$3], ($4) => {
+
+              /**
+               * @function get
+               * @description description
+               *
+               * @public
+               * @param  {type} - description
+               * @return {type} - description
+               */
+              function get($5) {
+
+              }
+
+              /**
+               * @function delete
+               * @description description
+               *
+               * @public
+               * @param  {type} - description
+               * @return {type} - description
+               */
+              function delete($6) {
+
+              }
+
+              /**
+               * @function put
+               * @description description
+               *
+               * @public
+               * @param  {type} - description
+               * @return {type} - description
+               */
+              function put($7) {
+
+              }
+
+              /**
+               * @function post
+               * @description description
+               *
+               * @public
+               * @param  {type} - description
+               * @return {type} - description
+               */
+              function post($8) {
+
+              }
+
+               return /** @alias module:$1 */ {
+                 get,
+                 delete,
+                 put,
+                 post
+               };
+             });
+           """
