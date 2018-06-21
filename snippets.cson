@@ -148,6 +148,7 @@
     'body':"""
              /**
               * @NApiVersion 2.x
+              * @NScriptType UserEventScript
               * @NModuleScope Public
               * 3EN Cloud Ltd.
               * @module $1
