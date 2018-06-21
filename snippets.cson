@@ -199,3 +199,92 @@
                };
              });
            """
+
+  'NetSuite Bundle Installation Script':
+    'prefix':'bundleInstallationScript'
+    'description': 'Bundle installation scripts are specialized server scripts that perform processes in target accounts as part of a bundle installation, update, or uninstall. These processes include setup, configuration, and data management tasks that would otherwise have to be completed by account administrators.
+                    Every bundle can include a bundle installation script that is automatically run when the bundle is installed, upgraded, or uninstalled. Each bundle installation script can contain triggers to be executed before install, after install, before update, after update, and after uninstall.'
+    'rightLabelHTML': '<span style="color:#EF490F">3EN - Netsuite</span>'
+    'descriptionMoreURL': 'https://system.netsuite.com/app/help/helpcenter.nl?fid=section_4460460309.html'
+    'body':"""
+             /**
+              * @NApiVersion 2.x
+              * @NModuleScope Public
+              * @NScriptType BundleInstallationScript
+              * 3EN Cloud Ltd.
+              * @module $1
+              * @description $2
+              */
+             define([$3], ($4) => {
+
+                /**
+                 * @function afterInstall
+                 * @description description
+                 *
+                 * @public
+                 * @param  {type} toversion description
+                 * @return {type} - description
+                 */
+                function afterInstall(toversion) {
+
+                }
+
+                /**
+                 * @function afterUpdate
+                 * @description description
+                 *
+                 * @public
+                 * @param  {type} fromversion description
+                 * @param  {type} toversion description
+                 * @return {type} - description
+                 */
+                function afterUpdate(fromversion, toversion) {
+
+                }
+
+                /**
+                 * @function beforeInstall
+                 * @description description
+                 *
+                 * @public
+                 * @param  {type} toversion description
+                 * @return {type} - description
+                 */
+                function beforeInstall(toversion) {
+
+                }
+
+                /**
+                 * @function beforeUninstall
+                 * @description description
+                 *
+                 * @public
+                 * @param  {type} toversion description
+                 * @return {type} - description
+                 */
+                function beforeUninstall(toversion) {
+
+                }
+
+                /**
+                 * @function beforeUpdate
+                 * @description description
+                 *
+                 * @public
+                 * @param  {type} fromversion description
+                 * @param  {type} toversion description
+                 * @return {type} - description
+                 */
+                function beforeUpdate(fromversion, toversion) {
+
+                }
+
+               return /** @alias module:$1 */ {
+                 afterInstall,
+                 afterUpdate,
+                 beforeInstall,
+                 beforeUninstall,
+                 beforeUpdate
+               };
+             });
+           """
