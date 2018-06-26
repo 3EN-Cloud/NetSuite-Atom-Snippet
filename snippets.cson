@@ -310,10 +310,9 @@
                * @description description
                *
                * @public
-               * @param  {http.ServerRequest} request description
-               * @param  {http.ServerResponse} response description
+               * @param  {Object} params description
                */
-               function onRequest(request, response) {
+               function onRequest(params) {
                  $5
                }
 
