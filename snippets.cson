@@ -288,3 +288,502 @@
                };
              });
            """
+
+  'NetSuite Suitelet':
+    'prefix':'suitelet'
+    'description': 'Suitelets are extensions of the SuiteScript API that allow you to build custom NetSuite pages and backend logic. Suitelets are server-side scripts that operate in a request-response model, and are invoked by HTTP GET or POST requests to system generated URLs.'
+    'rightLabelHTML': '<span style="color:#EF490F">3EN - Netsuite</span>'
+    'descriptionMoreURL': 'https://system.netsuite.com/app/help/helpcenter.nl?fid=section_4387799600.html'
+    'body':"""
+             /**
+              * @NApiVersion 2.x
+              * @NModuleScope Public
+              * @NScriptType Suitelet
+              * 3EN Cloud Ltd.
+              * @module $1
+              * @description $2
+              */
+             define([$3], ($4) => {
+
+              /**
+               * @function onRequest
+               * @description description
+               *
+               * @public
+               * @param  {Object} params description
+               */
+               function onRequest(params) {
+                 $5
+               }
+
+               return /** @alias module:$1 */ {
+                 onRequest,
+               };
+             });
+           """
+
+  'NetSuite Scheduled Script':
+    'prefix':'scheduledScript'
+    'description': 'Scheduled scripts are server-side scripts that are executed (processed) with SuiteCloud Processors. You can deploy scheduled scripts so they are submitted for processing at a future time, or at future times on a recurring basis. You can also submit scheduled scripts on demand from the deployment record or from another script with the task.ScheduledScriptTask API.'
+    'rightLabelHTML': '<span style="color:#EF490F">3EN - Netsuite</span>'
+    'descriptionMoreURL': 'https://system.netsuite.com/app/help/helpcenter.nl?fid=section_4387799491.html'
+    'body':"""
+             /**
+              * @NApiVersion 2.x
+              * @NModuleScope Public
+              * @NScriptType ScheduledScript
+              * 3EN Cloud Ltd.
+              * @module $1
+              * @description $2
+              */
+             define([$3], ($4) => {
+
+              /**
+               * @function execute
+               * @description description
+               *
+               * @public
+               * @param  {Object} context description
+               */
+               function execute(context) {
+                 $5
+               }
+
+               return /** @alias module:$1 */ {
+                 execute,
+               };
+             });
+           """
+
+  'NetSuite Workflow Action Script':
+    'prefix':'workflowAction'
+    'description': 'Workflow action scripts allow you to create custom Workflow Actions that are defined on a record in a workflow. Workflow action scripts are useful for performing actions on sublists because sublist fields are not currently available through the Workflow Manager. Workflow action scripts are also useful when you need to create custom actions that execute complex computational logic that is beyond what can be implemented with the built-in actions.'
+    'rightLabelHTML': '<span style="color:#EF490F">3EN - Netsuite</span>'
+    'descriptionMoreURL': 'https://system.netsuite.com/app/help/helpcenter.nl?fid=section_4460429314.html'
+    'body':"""
+             /**
+              * @NApiVersion 2.x
+              * @NModuleScope Public
+              * @NScriptType WorkflowActionScript
+              * 3EN Cloud Ltd.
+              * @module $1
+              * @description $2
+              */
+             define([$3], ($4) => {
+              /**
+               * @function onAction
+               * @description description
+               *
+               * @public
+               * @param  {Object} scriptContext description
+               */
+               function onAction(scriptContext) {
+                 $5
+               }
+               return /** @alias module:$1 */ {
+                 onAction,
+               };
+             });
+           """
+
+  'NetSuite Portlet':
+    'prefix':'portlet'
+    'description': 'Portlet scripts are run on the server and are rendered in the NetSuite dashboard.'
+    'rightLabelHTML': '<span style="color:#EF490F">3EN - Netsuite</span>'
+    'descriptionMoreURL': 'https://system.netsuite.com/app/help/helpcenter.nl?fid=section_4387799288.html'
+    'body':"""
+             /**
+              * @NApiVersion 2.x
+              * @NModuleScope Public
+              * @NScriptType Portlet
+              * 3EN Cloud Ltd.
+              * @module $1
+              * @description $2
+              */
+             define([$3], ($4) => {
+              /**
+               * @function render
+               * @description description
+               *
+               * @public
+               * @param  {Object} params description
+               */
+               function render(params) {
+                 $5
+               }
+               return /** @alias module:$1 */ {
+                 render,
+               };
+             });
+           """
+
+  'NetSuite Mass Update':
+    'prefix':'massUpdateScript'
+    'description': 'Mass update scripts allow you to programmatically perform custom updates to fields that are not available through general mass updates. Mass update scripts can run complex calculations, as defined in your script, across records.'
+    'rightLabelHTML': '<span style="color:#EF490F">3EN - Netsuite</span>'
+    'descriptionMoreURL': 'https://system.netsuite.com/app/help/helpcenter.nl?fid=section_4460452911.html'
+    'body':"""
+             /**
+              * @NApiVersion 2.x
+              * @NModuleScope Public
+              * @NScriptType MassUpdateScript
+              * 3EN Cloud Ltd.
+              * @module $1
+              * @description $2
+              */
+             define([$3], ($4) => {
+              /**
+               * @function each
+               * @description description
+               *
+               * @public
+               * @param  {Object} params description
+               */
+               function each(params) {
+                 var $5 = record.load({
+                       type: params.type,
+                       id: params.id
+                   });
+                 $5.setValue('$6', $7);
+                 $5.save();
+               }
+
+               return /** @alias module:$1 */ {
+                 each,
+               };
+             });
+           """
+
+    'NetSuite Map Reduce':
+      'prefix':'mapReduce'
+      'description': 'The map/reduce script type is designed for scripts that need to handle large amounts of data. It is best suited for situations where the data can be divided into small, independent parts. When the script is executed, a structured framework automatically creates enough jobs to process all of these parts. Map/reduce is ideal for scenarios where you want to apply the same logic repeatedly — once for each object in a series.'
+      'rightLabelHTML': '<span style="color:#EF490F">3EN - Netsuite</span>'
+      'descriptionMoreURL': 'https://system.netsuite.com/app/help/helpcenter.nl?fid=section_4387799161.html'
+      'body':"""
+               /**
+                * @NApiVersion 2.x
+                * @NModuleScope Public
+                * @NScriptType MapReduceScript
+                * 3EN Cloud Ltd.
+                * @module $1
+                * @description $2
+                */
+               define([$3], ($4) => {
+
+                /**
+                 * @function getInputData
+                 * @description description
+                 *
+                 * @public
+                 * @return {type} Description
+                 * @param  {Object} inputContext description
+                 */
+                 function getInputData(inputContext) {
+                   return $5;
+                 }
+
+                /**
+                 * @function map
+                 * @description description
+                 *
+                 * @public
+                 * @param  {Object} mapContext description
+                 */
+                 function map(mapContext) {
+                   for (var i = 0; mapContext.value && i < mapContext.value.length; i++)
+                     if ($6) {
+                         mapContext.write({
+                              key: $7,
+                              value: $8
+                         });
+                     }
+                 }
+
+                /**
+                 * @function reduce
+                 * @description description
+                 *
+                 * @public
+                 * @param  {Object} reduceContext description
+                 */
+                 function reduce(reduceContext) {
+                   reduceContext.write({
+                       key: $9,
+                       value: $10
+                   });
+                 }
+
+                /**
+                 * @function summarize
+                 * @description description
+                 *
+                 * @public
+                 * @param  {Object} summaryContext description
+                 */
+                 function summarize(summaryContext) {
+                   log.audit({
+                       title: $11,
+                       details: $12
+                   });
+                 }
+
+                 return /** @alias module:$1 */ {
+                   getInputData,
+                   map,
+                   reduce,
+                   summarize
+                 };
+               });
+             """
+
+  'NetSuite Client Script':
+    'prefix':'clientScript'
+    'description': 'Client scripts are scripts that are executed by predefined event triggers in a browser. They can validate user-entered data and auto-populate fields or sublists at various form events.'
+    'rightLabelHTML': '<span style="color:#EF490F">3EN - Netsuite</span>'
+    'descriptionMoreURL': 'https://system.netsuite.com/app/help/helpcenter.nl?fid=section_4387798404.html'
+    'body':"""
+             /**
+              * @NApiVersion 2.x
+              * @NModuleScope Public
+              * @NScriptType ClientScript
+              * 3EN Cloud Ltd.
+              * @module $1
+              * @description $2
+              */
+             define([$3], ($4) => {
+
+              /**
+               * @function pageInit
+               * @description description
+               *
+               * @public
+               * @param  {Object} context description
+               */
+               function pageInit(context) {
+                  if (context.mode !== 'create')
+                      return;
+                  let $5 = context.currentRecord;
+                  $5.setValue({
+                      fieldId: $6,
+                      value: $7
+                  });
+              }
+
+              /**
+               * @function saveRecord
+               * @description description
+               *
+               * @public
+               * @param  {Object} context description
+               * @return {Boolean} description
+               */
+              function saveRecord(context) {
+                  let $8 = context.currentRecord;
+                  if (!$8.getValue({
+                      fieldId: 'entity'
+                  }) || $8.getLineCount({
+                      sublistId: 'item'
+                  }) < 1)
+                      throw error.create({
+                          name: '$10',
+                          message: '$11'
+                      });
+                  return true;
+              }
+
+              /**
+               * @function validateField
+               * @description description
+               *
+               * @public
+               * @param  {Object} context description
+               * @return {Boolean} description
+               */
+              function validateField(context) {
+                  let $12 = context.currentRecord;
+                  let $13 = context.sublistId;
+                  let $14 = context.fieldId;
+                  let $15 = context.line;
+                  if ($13 === '$16') {
+                      if ($14 === '$17') {
+                          if ($12.getCurrentSublistValue({
+                                  sublistId: $13,
+                                  fieldId: $14
+                              }) < $18)
+                              $12.setValue({
+                                  fieldId: '$19',
+                                  value: '$20'
+                              });
+                          else
+                              $12.setValue({
+                                  fieldId: '$21',
+                                  value: '$22'
+                              });
+                      }
+                  }
+                  return true;
+              }
+
+              /**
+               * @function fieldChanged
+               * @description description
+               *
+               * @public
+               * @param  {Object} context description
+               */
+              function fieldChanged(context) {
+                  let $12 = context.currentRecord;
+                  let $13 = context.sublistId;
+                  let $14 = context.fieldId;
+                  let $15 = context.line;
+                  if ($13 === 'item' && $14 === 'item')
+                      $12.setValue({
+                          fieldId: '$23',
+                          value: '$24'
+                      });
+              }
+
+              /**
+               * @function postSourcing
+               * @description description
+               *
+               * @public
+               * @param  {Object} context description
+               * @return {Boolean} description
+               */
+              function postSourcing(context) {
+                let $12 = context.currentRecord;
+                let $13 = context.sublistId;
+                let $14 = context.fieldId;
+                let $15 = context.line;
+                if ($13 === 'item' && $14 === 'item')
+                if ($12.getCurrentSublistValue({
+                        sublistId: $13,
+                        fieldId: $14
+                    }) === '$25')
+                    if ($12.getCurrentSublistValue({
+                            sublistId: $13,
+                            fieldId: '$26'
+                        }) !== '1-1')
+                        $12.setCurrentSublistValue({
+                            sublistId: sublistName,
+                            fieldId: '$26',
+                            value: '$25'
+                        });
+              }
+
+              /**
+               * @function lineInit
+               * @description description
+               *
+               * @public
+               * @param  {Object} context description
+               */
+              function lineInit(context) {
+                  let $12 = context.currentRecord;
+                  let $13 = context.sublistId;
+                  if (sublistName === 'partners')
+                    $12.setCurrentSublistValue({
+                        sublistId: $13,
+                        fieldId: '$27',
+                        value: '$28'
+                    });
+              }
+
+              /**
+               * @function validateDelete
+               * @description description
+               *
+               * @public
+               * @param  {Object} context description
+               * @return {Boolean} description
+               */
+              function validateDelete(context) {
+                  let $12 = context.currentRecord;
+                  let $13 = context.sublistId;
+
+                  if ($13  === '$29')
+                      if ($12.getCurrentSublistValue({
+                              sublistId: $13,
+                              fieldId: '$30'
+                          }) === '$31')
+                          $12.setValue({
+                              fieldId: '$32',
+                              value: '$33'
+                          });
+                  return true;
+              }
+
+              /**
+               * @function validateInsert
+               * @description description
+               *
+               * @public
+               * @param  {Object} context description
+               * @return {Boolean} description
+               */
+              function validateInsert(context) {
+                  let $12 = context.currentRecord;
+                  let $13 = context.sublistId;
+
+                  if ($13 === '$34')
+                    if ($12.getCurrentSublistValue({
+                            sublistId: $13,
+                            fieldId: '$35'
+                        }) !== '$36')
+                        $12.setCurrentSublistValue({
+                            sublistId: $13,
+                            fieldId: '$35',
+                            value: '$36'
+                        });
+              }
+
+              /**
+               * @function validateLine
+               * @description description
+               *
+               * @public
+               * @param  {Object} context description
+               * @return {Boolean} description
+               */
+              function validateLine(context) {
+                  let $12 = context.currentRecord;
+                  let $13 = context.sublistId;
+                  if ($13 === '$37')
+                    if ($12.getCurrentSublistValue({
+                            sublistId: $13,
+                            fieldId: '$38'
+                        }) !== '$39%')
+                        $12.setCurrentSublistValue({
+                            sublistId: $13,
+                            fieldId: '$38',
+                            value: '$39%'
+                        });
+                return true;
+              }
+
+              function sublistChanged(context) {
+                  let $12 = context.currentRecord;
+                  let $13 = context.sublistId;
+                  let $40 = context.operation;
+                  if ($13 === 'item')
+                      $12.setValue({
+                          fieldId: '$41',
+                          value: '$42'
+                      });
+              }
+
+               return /** @alias module:$1 */ {
+                 pageInit,
+                 fieldChanged,
+                 postSourcing,
+                 sublistChanged,
+                 lineInit,
+                 validateField,
+                 validateLine,
+                 validateInsert,
+                 validateDelete,
+                 saveRecord
+               };
+             });
+           """
