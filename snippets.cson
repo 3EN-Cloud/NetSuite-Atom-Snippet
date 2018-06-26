@@ -288,3 +288,30 @@
                };
              });
            """
+
+  'NetSuite Suitelet':
+    'prefix':'suitelet'
+    'description': 'Suitelets are extensions of the SuiteScript API that allow you to build custom NetSuite pages and backend logic. Suitelets are server-side scripts that operate in a request-response model, and are invoked by HTTP GET or POST requests to system generated URLs.'
+    'rightLabelHTML': '<span style="color:#EF490F">3EN - Netsuite</span>'
+    'descriptionMoreURL': 'https://system.netsuite.com/app/help/helpcenter.nl?fid=section_4387799600.html'
+    'body':"""
+             /**
+              * @NApiVersion 2.x
+              * @NModuleScope Public
+              * @NScriptType Suitelet
+              * 3EN Cloud Ltd.
+              * @module $1
+              * @description $2
+              */
+             define([$3], ($4) => {
+
+               function onRequest($5, $6) {
+
+               }
+
+               return /** @alias module:$1 */ {
+                 onRequest,
+                 $7
+               };
+             });
+           """
