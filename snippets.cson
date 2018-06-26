@@ -720,7 +720,6 @@
                *
                * @public
                * @param  {Object} context description
-               * @return {Boolean} description
                */
               function validateInsert(context) {
                   let $12 = context.currentRecord;
@@ -762,6 +761,13 @@
                 return true;
               }
 
+              /**
+               * @function sublistChanged
+               * @description description
+               *
+               * @public
+               * @param  {Object} context description
+               */
               function sublistChanged(context) {
                   let $12 = context.currentRecord;
                   let $13 = context.sublistId;
