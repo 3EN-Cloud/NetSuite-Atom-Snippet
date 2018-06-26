@@ -305,13 +305,20 @@
               */
              define([$3], ($4) => {
 
-               function onRequest($5, $6) {
-
+              /**
+               * @function onRequest
+               * @description description
+               *
+               * @public
+               * @param  {http.ServerRequest} request description
+               * @param  {http.ServerResponse} response description
+               */
+               function onRequest(request, response) {
+                 $5
                }
 
                return /** @alias module:$1 */ {
                  onRequest,
-                 $7
                };
              });
            """
