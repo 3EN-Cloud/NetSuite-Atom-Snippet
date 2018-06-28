@@ -14,7 +14,18 @@ Expand snippets matching the prefix with <kbd>tab</kbd> in Atom.
 
 Current supported prefixes:
 
- - `for(var line = 1; line <= lineItemCount; line++)` will insert a for loop suited to iterating sublists.
- - `search` will insert some nlapiSearchRecord boilerplate code.
+ - `for(var line = 1; line <= lineItemCount; line++)`
+ - `search`
+ - `define`
+ - `restlet`
+ - `userEvent`
+ - `bundleInstallationScript`
+ - `suitelet`
+ - `scheduledScript`
+ - `workflowAction`
+ - `portlet`
+ - `massUpdateScript`
+ - `mapReduce`
+ - `clientScript`
 
-![demo](https://raw.githubusercontent.com/3EN-Cloud/NetSuite-Atom-Snippet/master/media/sample.gif)
+![demo](https://raw.githubusercontent.com/3EN-Cloud/NetSuite-Atom-Snippet/master/media/sample2.gif)
