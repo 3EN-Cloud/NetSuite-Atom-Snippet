@@ -2,7 +2,10 @@
 '.source.js':
   'NetSuite Sublist For Loop':
     'prefix':'for(var line = 1; line <= lineItemCount; line++)'
-    'body':"for(var line = 1; line <= lineItemCount; line++) {$1}"
+    'description': 'The for statement creates a loop that consists of three optional expressions, enclosed in parentheses and separated by semicolons, followed by a statement (usually a block statement) to be executed in the loop.'
+    'rightLabelHTML': '<span style="color:#EF490F">3EN - Netsuite</span>'
+    'descriptionMoreURL': 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for'
+    'body':"""for(var line = 1; line <= lineItemCount; line++) {$1}"""
 
   'NetSuite Search':
     'prefix':'search'
@@ -296,7 +299,7 @@
                }
 
                return /** @alias module:$1 */ {
-                 onRequest,
+                 onRequest
                };
              });
            """
@@ -329,7 +332,7 @@
                }
 
                return /** @alias module:$1 */ {
-                 execute,
+                 execute
                };
              });
            """
@@ -349,6 +352,7 @@
               * @description $2
               */
              define([$3], ($4) => {
+
               /**
                * @function onAction
                * @description description
@@ -361,7 +365,7 @@
                }
 
                return /** @alias module:$1 */ {
-                 onAction,
+                 onAction
                };
              });
            """
@@ -381,6 +385,7 @@
               * @description $2
               */
              define([$3], ($4) => {
+
               /**
                * @function render
                * @description description
@@ -393,7 +398,7 @@
                }
 
                return /** @alias module:$1 */ {
-                 render,
+                 render
                };
              });
            """
@@ -413,6 +418,7 @@
               * @description $2
               */
              define([$3], ($4) => {
+
               /**
                * @function each
                * @description description
@@ -425,89 +431,89 @@
                }
 
                return /** @alias module:$1 */ {
-                 each,
+                 each
                };
              });
            """
 
-    'NetSuite Map Reduce':
-      'prefix':'mapReduce'
-      'description': 'The map/reduce script type is designed for scripts that need to handle large amounts of data. It is best suited for situations where the data can be divided into small, independent parts. When the script is executed, a structured framework automatically creates enough jobs to process all of these parts. Map/reduce is ideal for scenarios where you want to apply the same logic repeatedly — once for each object in a series.'
-      'rightLabelHTML': '<span style="color:#EF490F">3EN - Netsuite</span>'
-      'descriptionMoreURL': 'https://system.netsuite.com/app/help/helpcenter.nl?fid=section_4387799161.html'
-      'body':"""
-               /**
-                * @NApiVersion 2.x
-                * @NModuleScope Public
-                * @NScriptType MapReduceScript
-                * 3EN Cloud Ltd.
-                * @module $1
-                * @description $2
-                */
-               define([$3], ($4) => {
+  'NetSuite Map Reduce':
+    'prefix':'mapReduce'
+    'description': 'The map/reduce script type is designed for scripts that need to handle large amounts of data. It is best suited for situations where the data can be divided into small, independent parts. When the script is executed, a structured framework automatically creates enough jobs to process all of these parts. Map/reduce is ideal for scenarios where you want to apply the same logic repeatedly — once for each object in a series.'
+    'rightLabelHTML': '<span style="color:#EF490F">3EN - Netsuite</span>'
+    'descriptionMoreURL': 'https://system.netsuite.com/app/help/helpcenter.nl?fid=section_4387799161.html'
+    'body':"""
+             /**
+              * @NApiVersion 2.x
+              * @NModuleScope Public
+              * @NScriptType MapReduceScript
+              * 3EN Cloud Ltd.
+              * @module $1
+              * @description $2
+              */
+             define([$3], ($4) => {
 
-                /**
-                 * @function getInputData
-                 * @description description
-                 *
-                 * @public
-                 * @return {type} Description
-                 * @param  {Object} inputContext description
-                 */
-                 function getInputData(inputContext) {
+              /**
+               * @function getInputData
+               * @description description
+               *
+               * @public
+               * @return {type} Description
+               * @param  {Object} inputContext description
+               */
+               function getInputData(inputContext) {
 
-                 }
+               }
 
-                /**
-                 * @function map
-                 * @description description
-                 *
-                 * @public
-                 * @param  {Object} mapContext description
-                 */
-                 function map(mapContext) {
-                   for (var i = 0; mapContext.value && i < mapContext.value.length; i++)
-                     if ($6) {
-                         mapContext.write({
-                              key: $7,
-                              value: $8
-                         });
-                     }
-                 }
+              /**
+               * @function map
+               * @description description
+               *
+               * @public
+               * @param  {Object} mapContext description
+               */
+               function map(mapContext) {
+                 for (var i = 0; mapContext.value && i < mapContext.value.length; i++)
+                   if ($6) {
+                       mapContext.write({
+                            key: $7,
+                            value: $8
+                       });
+                   }
+               }
 
-                /**
-                 * @function reduce
-                 * @description description
-                 *
-                 * @public
-                 * @param  {Object} reduceContext description
-                 */
-                 function reduce(reduceContext) {
-                   reduceContext.write({
-                       key: $9,
-                       value: $10
-                   });
-                 }
+              /**
+               * @function reduce
+               * @description description
+               *
+               * @public
+               * @param  {Object} reduceContext description
+               */
+               function reduce(reduceContext) {
+                 reduceContext.write({
+                     key: $9,
+                     value: $10
+                 });
+               }
 
-                /**
-                 * @function summarize
-                 * @description description
-                 *
-                 * @public
-                 * @param  {Object} summaryContext description
-                 */
-                 function summarize(summaryContext) {
+              /**
+               * @function summarize
+               * @description description
+               *
+               * @public
+               * @param  {Object} summaryContext description
+               */
+               function summarize(summaryContext) {
 
-                 }
+               }
 
-                 return /** @alias module:$1 */ {
-                   getInputData,
-                   map,
-                   reduce,
-                   summarize
-                 };
-               });
-             """
+               return /** @alias module:$1 */ {
+                 getInputData,
+                 map,
+                 reduce,
+                 summarize
+               };
+             });
+           """
 
   'NetSuite Client Script':
     'prefix':'clientScript'
