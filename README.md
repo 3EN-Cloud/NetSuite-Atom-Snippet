@@ -29,4 +29,3 @@ Current supported prefixes:
  - `clientScript`
 
 ![demo](https://raw.githubusercontent.com/3EN-Cloud/NetSuite-Atom-Snippet/master/media/sample2.gif)
-![demo](https://raw.githubusercontent.com/3EN-Cloud/NetSuite-Atom-Snippet/master/media/sample.gif)
